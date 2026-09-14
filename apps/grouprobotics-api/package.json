@@ -1,0 +1,31 @@
+{
+    "name": "project-api",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development PORT=40011 nest start --watch",
+        "build": "nest build",
+        "start": "cross-env NODE_ENV=production PORT=40011 node dist/main.js",
+        "lint": "eslint --max-warnings 0 .",
+        "check-types": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@nestjs/common": "^11.0.0",
+        "@nestjs/core": "^11.0.0",
+        "@nestjs/platform-express": "^11.0.0",
+        "@repo/shared": "*",
+        "@repo/types": "*",
+        "dotenv": "^16.0.3",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.2"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^11.0.0",
+        "@repo/eslint-config": "*",
+        "@repo/typescript-config": "*",
+        "@types/node": "^22.15.3",
+        "cross-env": "^10.0.0",
+        "eslint": "^9.39.1",
+        "typescript": "5.9.2"
+    }
+}

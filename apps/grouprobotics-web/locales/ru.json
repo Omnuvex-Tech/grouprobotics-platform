@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "navLinks": {
+      "about": "О нас",
+      "capabilities": "Возможности",
+      "technologies": "Технологии",
+      "industries": "Отрасли",
+      "partners": "Партнёры"
+    }
+  }
+}
