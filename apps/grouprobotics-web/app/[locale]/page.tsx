@@ -1,5 +1,8 @@
 import { notFound } from 'next/navigation';
 import { isValidLocale } from '@/lib/i18n';
+import { Connect } from './components/Connect/connect-wrapper';
+import { Approach } from './components/Approach/approach-wrapper';
+import { WhatWeDo } from './components/WhatWeDo/what-we-do-wrapper';
 
 export default async function Home({
   params,
@@ -13,7 +16,12 @@ export default async function Home({
   }
 
   return (
-    <div style={{ padding: '48px 24px' }}>
-<h1>hello world !</h1>    </div>
+    <>
+      <Connect locale={locale} />
+      <Approach locale={locale} />
+      <WhatWeDo locale={locale}/>
+
+
+    </>
   );
 }

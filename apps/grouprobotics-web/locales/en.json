@@ -7,5 +7,53 @@
       "industries": "Industries",
       "partners": "Partners"
     }
+  },
+   "connect": {
+    "title": "Robotics Infrastructure",
+    "description": "We turn advanced robotics into real-world solutions, from deployment and integration to service and scale",
+    "cta": "Talk to Us"
+  },
+   "approach": {
+    "badge": "Our Approach",
+    "title": "We Build the Ecosystem Around the Robot",
+    "paragraph": "Buying a robot is only the beginning. A successful robotics deployment requires technical integration, application development, installation, servicing, spare parts, training, financing, and ongoing operational support.",
+    "highlight": "Group Robotics brings all these capabilities together under one unified platform",
+    "quote": "\"Turn advanced robotics into reliable, commercially viable solutions for real businesses.\""
+  },
+   "whatWeDo": {
+    "badge": "From entry to scale",
+    "title": "What We Do",
+    "items": [
+      {
+        "label": "Market Development & Distribution",
+        "title": "Market Development & Distribution",
+        "description": "We bring leading international robotics technologies to the local market and build professional sales and distribution channels around them."
+      },
+      {
+        "label": "System Integration & Deployment",
+        "title": "System Integration & Deployment",
+        "description": "We plan, install, and commission robotics systems so they run reliably inside real production environments from day one."
+      },
+      {
+        "label": "Software & AI Integration",
+        "title": "Software & AI Integration",
+        "description": "We connect robots to the software and AI layers that turn hardware into an intelligent, adaptable production tool."
+      },
+      {
+        "label": "Technical Service & Spare Parts",
+        "title": "Technical Service & Spare Parts",
+        "description": "Our service teams and parts inventory keep deployed robots running with minimal downtime, wherever they operate."
+      },
+      {
+        "label": "Training & Customer Support",
+        "title": "Training & Customer Support",
+        "description": "We train operators and provide ongoing support so teams can run and maintain their robotics systems with confidence."
+      },
+      {
+        "label": "Financing & Robot-as-a-Service",
+        "title": "Financing & Robot-as-a-Service",
+        "description": "Flexible financing and Robot-as-a-Service options let businesses adopt robotics without a heavy upfront investment."
+      }
+    ]
   }
 }

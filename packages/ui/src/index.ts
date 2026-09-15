@@ -17,4 +17,13 @@ export type { NavLinkItem } from './components/Navbar/navbar';
 export { LanguageSwitcher } from './components/LanguageSwitcher/language-switcher';
 export type { LanguageSwitcherProps } from './components/LanguageSwitcher/language-switcher';
 
+export { ConnectUI as Connect } from './components/Connect/connect';
+export type { ConnectProps } from './components/Connect/connect';
+
+export { ApproachUI as Approach } from './components/Approach/approach';
+export type { ApproachProps } from './components/Approach/approach';
+
+export { WhatWeDoUI as WhatWeDo } from './components/WhatWeDo/what-we-do';
+export type { WhatWeDoProps, WhatWeDoItem } from './components/WhatWeDo/what-we-do';
+
 export { cn } from "./lib/utils";
