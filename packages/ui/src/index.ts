@@ -26,4 +26,13 @@ export type { ApproachProps } from './components/Approach/approach';
 export { WhatWeDoUI as WhatWeDo } from './components/WhatWeDo/what-we-do';
 export type { WhatWeDoProps, WhatWeDoItem } from './components/WhatWeDo/what-we-do';
 
+export { CapabilitiesUI as Capabilities } from './components/Capabilities/capabilities';
+export type { CapabilitiesProps, CapabilityItem } from './components/Capabilities/capabilities';
+
+export { IndustriesUI as Industries } from './components/Industries/industries';
+export type { IndustriesProps, IndustryItem } from './components/Industries/industries';
+
+export { ResellerUI as Reseller } from './components/Reseller/reseller';
+export type { ResellerProps, ResellerItem } from './components/Reseller/reseller';
+
 export { cn } from "./lib/utils";

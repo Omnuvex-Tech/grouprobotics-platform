@@ -55,5 +55,68 @@
         "description": "Çevik maliyyələşdirmə və Robot-as-a-Service seçimləri bizneslərə böyük ilkin investisiya olmadan robotika tətbiq etməyə imkan verir."
       }
     ]
+  },
+   "capabilities": {
+    "badge": "İMKANLAR",
+    "title": "Texnoloji Fokusumuz",
+    "items": [
+      {
+        "title": "Humanoid və Cisimləşmiş AI",
+        "description": "Mürəkkəb real dünya tapşırıqlarını yerinə yetirən ağıllı maşınlar."
+      },
+      {
+        "title": "Kommersiya və Xidmət Robotikası",
+        "description": "Təmizlik, çatdırılma, qonaqpərvərlik, pərakəndə satış, səhiyyə, ofis və ictimai mühitlər üçün avtonom həllər."
+      },
+      {
+        "title": "Sənaye Robotikası və Avtomatlaşdırma",
+        "description": "Məhsuldarlığı, keyfiyyəti və iş yerinin səmərəliliyini artırmaq üçün nəzərdə tutulmuş kollaborativ robotlar, sənaye avtomatlaşdırması və robotika həlləri."
+      },
+      {
+        "title": "Avtonom Yoxlama",
+        "description": "Sənaye yoxlaması və uzaqdan monitorinq üçün mobil və dördayaqlı robotlar."
+      }
+    ]
+  },
+  "industries": {
+    "badge": "Real dünya əməliyyatları üçün robotika",
+    "title": "Xidmət Etdiyimiz Sahələr",
+    "rowOne": [
+      { "emoji": "🏨", "label": "Qonaqpərvərlik və Otellər" },
+      { "emoji": "🏬", "label": "Ticarət Mərkəzləri və Pərakəndə Satış" },
+      { "emoji": "✈️", "label": "Hava Limanları və Nəqliyyat" },
+      { "emoji": "🏥", "label": "Səhiyyə" },
+      { "emoji": "🏭", "label": "İstehsalat" }
+    ],
+    "rowTwo": [
+      { "emoji": "🏢", "label": "Kommersiya Binaları" },
+      { "emoji": "🚗", "label": "Avtomobil" },
+      { "emoji": "⚡", "label": "Neft və Qaz" },
+      { "emoji": "🌾", "label": "Kənd Təsərrüfatı" },
+      { "emoji": "🔋", "label": "Enerji və Kommunal Xidmətlər" }
+    ]
+  },
+    "reseller": {
+    "badge": "Yerli Qlobal",
+    "titleLineOne": "Sadəcə distribütor deyil",
+    "titleLineTwo": "Sənaye üçün qurulmuş robotika infrastrukturu",
+    "items": [
+      {
+        "title": "Güclü Yerli Bazar Girişi",
+        "description": "Azərbaycanın korporativ, institusional və biznes mühitinin dərin dərki."
+      },
+      {
+        "title": "Texniki İnfrastruktur",
+        "description": "Mühəndislik, inteqrasiya, servis, ehtiyat hissələri və müştəri dəstəyinə uzunmüddətli sadiqlik"
+      },
+      {
+        "title": "Kommersiya Təcrübəsi",
+        "description": "Beynəlxalq distribusiya, satışdan sonrakı xidmət və müştəri şəbəkələrində geniş təcrübə."
+      },
+      {
+        "title": "Maliyyə İmkanı",
+        "description": "Müştərilərin robotikaya keçidini sürətləndirən maliyyələşdirmə və Robot-as-a-Service modellərini inkişaf etdiririk."
+      }
+    ]
   }
 }

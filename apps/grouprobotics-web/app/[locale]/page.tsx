@@ -3,6 +3,9 @@ import { isValidLocale } from '@/lib/i18n';
 import { Connect } from './components/Connect/connect-wrapper';
 import { Approach } from './components/Approach/approach-wrapper';
 import { WhatWeDo } from './components/WhatWeDo/what-we-do-wrapper';
+import { Capabilities } from './components/Capabilities/capabilities-wrapper';
+import { Industries } from './components/Industries/industries-wrapper';
+import { Reseller } from './components/Reseller/reseller-wrapper';
 
 export default async function Home({
   params,
@@ -17,9 +20,12 @@ export default async function Home({
 
   return (
     <>
-      <Connect locale={locale} />
-      <Approach locale={locale} />
-      <WhatWeDo locale={locale}/>
+      <Connect      locale={locale} />
+      <Approach     locale={locale} />
+      <WhatWeDo     locale={locale} />
+      <Capabilities locale={locale} />
+      <Industries   locale={locale}/>
+      <Reseller     locale={locale}/>
 
 
     </>

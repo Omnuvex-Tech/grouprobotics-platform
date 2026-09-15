@@ -55,5 +55,68 @@
         "description": "Flexible financing and Robot-as-a-Service options let businesses adopt robotics without a heavy upfront investment."
       }
     ]
+  },
+   "capabilities": {
+    "badge": "CAPABILITIES",
+    "title": "Our Technology Focus",
+    "items": [
+      {
+        "title": "Humanoid & Embodied AI",
+        "description": "Intelligent machines performing complex real-world tasks."
+      },
+      {
+        "title": "Commercial & Service Robotics",
+        "description": "Autonomous solutions for cleaning, delivery, hospitality, retail, healthcare, offices and public environments."
+      },
+      {
+        "title": "Industrial Robotics & Automation",
+        "description": "Collaborative robots, industrial automation and robotic solutions designed to improve productivity, quality and workplace efficiency."
+      },
+      {
+        "title": "Autonomous Inspection",
+        "description": "Mobile and quadruped robots for industrial inspection and remote monitoring."
+      }
+    ]
+  },
+   "industries": {
+    "badge": "Robotics for real-world operations",
+    "title": "Industries We Serve",
+    "rowOne": [
+      { "emoji": "🏨", "label": "Hospitality & Hotels" },
+      { "emoji": "🏬", "label": "Shopping Centers & Retail" },
+      { "emoji": "✈️", "label": "Airports & Transportation" },
+      { "emoji": "🏥", "label": "Healthcare" },
+      { "emoji": "🏭", "label": "Manufacturing" }
+    ],
+    "rowTwo": [
+      { "emoji": "🏢", "label": "Commercial Buildings" },
+      { "emoji": "🚗", "label": "Automotive" },
+      { "emoji": "⚡", "label": "Oil & Gas" },
+      { "emoji": "🌾", "label": "Agriculture" },
+      { "emoji": "🔋", "label": "Energy & Utilities" }
+    ]
+  },
+   "reseller": {
+    "badge": "Local Global",
+    "titleLineOne": "Not just a reseller",
+    "titleLineTwo": "Robotics infrastructure, built for industry",
+    "items": [
+      {
+        "title": "Strong Local Market Access",
+        "description": "Strong understanding of Azerbaijan's corporate, institutional, and business environment."
+      },
+      {
+        "title": "Technical Infrastructure",
+        "description": "Long-term commitment to engineering, integration, service, spare parts, and customer support"
+      },
+      {
+        "title": "Commercial Experience",
+        "description": "Extensive experience in international distribution, after-sales, and customer networks."
+      },
+      {
+        "title": "Financial Capability",
+        "description": "Develop financing and Robot-as-a-Service models that accelerate customers' transition to robotics."
+      }
+    ]
   }
 }
