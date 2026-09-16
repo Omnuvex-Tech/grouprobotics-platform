@@ -35,4 +35,16 @@ export type { IndustriesProps, IndustryItem } from './components/Industries/indu
 export { ResellerUI as Reseller } from './components/Reseller/reseller';
 export type { ResellerProps, ResellerItem } from './components/Reseller/reseller';
 
+export { ProblemSolutionUI as ProblemSolution } from './components/ProblemSolution/problem-solution';
+export type { ProblemSolutionProps } from './components/ProblemSolution/problem-solution';
+
+export { MarketUI as Market } from './components/Market/market';
+export type { MarketProps, MarketItem } from './components/Market/market';
+
+export { ContactUI as Contact } from './components/Contact/contact';
+export type { ContactProps, ContactOption } from './components/Contact/contact';
+
+export { FooterUI as Footer } from './components/Footer/footer';
+export type { FooterProps, FooterLinkItem } from './components/Footer/footer';
+
 export { cn } from "./lib/utils";

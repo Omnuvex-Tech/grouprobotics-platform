@@ -105,8 +105,9 @@
   height: 689px;
   background: #ffffff;
   border-radius: 32px;
-  padding: 4px;
+  padding: 6px;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .showcaseInner {
@@ -128,7 +129,8 @@
   bottom: 0;
   height: 40%;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
   mask-image: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 70%, transparent 100%);
 }

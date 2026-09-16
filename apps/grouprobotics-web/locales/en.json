@@ -8,11 +8,13 @@
       "partners": "Partners"
     }
   },
+
    "connect": {
     "title": "Robotics Infrastructure",
     "description": "We turn advanced robotics into real-world solutions, from deployment and integration to service and scale",
     "cta": "Talk to Us"
   },
+
    "approach": {
     "badge": "Our Approach",
     "title": "We Build the Ecosystem Around the Robot",
@@ -20,6 +22,7 @@
     "highlight": "Group Robotics brings all these capabilities together under one unified platform",
     "quote": "\"Turn advanced robotics into reliable, commercially viable solutions for real businesses.\""
   },
+
    "whatWeDo": {
     "badge": "From entry to scale",
     "title": "What We Do",
@@ -56,6 +59,7 @@
       }
     ]
   },
+
    "capabilities": {
     "badge": "CAPABILITIES",
     "title": "Our Technology Focus",
@@ -78,6 +82,7 @@
       }
     ]
   },
+
    "industries": {
     "badge": "Robotics for real-world operations",
     "title": "Industries We Serve",
@@ -96,6 +101,7 @@
       { "emoji": "🔋", "label": "Energy & Utilities" }
     ]
   },
+
    "reseller": {
     "badge": "Local Global",
     "titleLineOne": "Not just a reseller",
@@ -118,5 +124,69 @@
         "description": "Develop financing and Robot-as-a-Service models that accelerate customers' transition to robotics."
       }
     ]
+  },
+
+   "problemSolution": {
+    "badge": "Contact",
+    "titleLineOne": "Tell Us the Problem.",
+    "titleLineTwo": "We Will Find the RoboticSolution",
+    "description": "It's not important to know which robot you need. Tell us which process is costly, repetitive, labor-intensive, dangerous, or inefficient."
+  },
+
+   "market": {
+    "badge": "For Manufacturers",
+    "title": "Build Your Market With Us",
+    "rowOne": [
+      { "number": "01", "label": "Technical Service" },
+      { "number": "02", "label": "Spare Parts Infrastructure" },
+      { "number": "03", "label": "Customer Training" },
+      { "number": "04", "label": "Pilot Development" },
+      { "number": "05", "label": "Financing & RaaS" }
+    ],
+    "rowTwo": [
+      { "number": "06", "label": "Market Development" },
+      { "number": "07", "label": "Local Sales Organization" },
+      { "number": "08", "label": "Demo & Experience Facilities" },
+      { "number": "09", "label": "System Integration" },
+      { "number": "10", "label": "Engineering Capability" }
+    ]
+  },
+
+   "contact": {
+    "badge": "Contact",
+    "title": "Let's Build Something Real",
+    "description": "Whether you're exploring robotic solutions for your business, or looking to establish a technology partnership — we're ready to talk.",
+    "labels": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "phone": "Phone",
+      "phonePlaceholder": "+994 __ ___ __ __",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "interest": "I am interested in",
+      "interestPlaceholder": "Select an option",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project or challenge",
+      "send": "Send"
+    },
+    "interestOptions": [
+      { "value": "robotics-solution", "label": "Robotic Solutions" },
+      { "value": "technology-partnership", "label": "Technology Partnership" },
+      { "value": "distribution", "label": "Distribution & Reselling" },
+      { "value": "other", "label": "Other" }
+    ]
+  },
+
+   "footer": {
+    "brandName": "GROUP ROBOTICS",
+    "brandCountry": "Azerbaijan",
+    "tagline": "Robotics Infrastructure for the Real World",
+    "domain": "grouprobotics.az",
+    "phone": "+994 50 223 47 00",
+    "contact": "Contact",
+    "copyright": "© {year} Group Robotics. All Rights Reserved.",
+    "privacy": "Privacy Policy"
   }
 }

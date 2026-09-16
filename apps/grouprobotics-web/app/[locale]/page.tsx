@@ -6,6 +6,9 @@ import { WhatWeDo } from './components/WhatWeDo/what-we-do-wrapper';
 import { Capabilities } from './components/Capabilities/capabilities-wrapper';
 import { Industries } from './components/Industries/industries-wrapper';
 import { Reseller } from './components/Reseller/reseller-wrapper';
+import { ProblemSolution } from './components/ProblemSolution/problem-solution-wrapper';
+import { Market } from './components/Market/market-wrapper';
+import { Contact } from './components/Contact/contact-wrapper';
 
 export default async function Home({
   params,
@@ -20,12 +23,15 @@ export default async function Home({
 
   return (
     <>
-      <Connect      locale={locale} />
-      <Approach     locale={locale} />
-      <WhatWeDo     locale={locale} />
-      <Capabilities locale={locale} />
-      <Industries   locale={locale}/>
-      <Reseller     locale={locale}/>
+      <Connect          locale={locale} />
+      <Approach         locale={locale} />
+      <WhatWeDo         locale={locale} />
+      <Capabilities     locale={locale} />
+      <Industries       locale={locale} />
+      <Reseller         locale={locale} />
+      <ProblemSolution  locale={locale} />
+      <Market           locale={locale} />
+      <Contact          locale={locale} />
 
 
     </>

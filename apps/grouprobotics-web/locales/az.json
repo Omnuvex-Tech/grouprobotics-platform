@@ -8,11 +8,13 @@
       "partners": "Tərəfdaşlar"
     }
   },
+
   "connect": {
     "title": "Robotika İnfrastrukturu",
     "description": "Biz qabaqcıl robotikanı real dünya həllərinə çeviririk — tətbiq və inteqrasiyadan xidmət və miqyaslanmaya qədər",
     "cta": "Bizimlə Əlaqə"
   },
+
   "approach": {
     "badge": "Yanaşmamız",
     "title": "Robotun Ətrafında Ekosistem Qururuq",
@@ -20,6 +22,7 @@
     "highlight": "Group Robotics bütün bu imkanları vahid platformada birləşdirir",
     "quote": "\"Qabaqcıl robotikanı real bizneslər üçün etibarlı, kommersiya cəhətdən sərfəli həllərə çeviririk.\""
   },
+
   "whatWeDo": {
     "badge": "Girişdən miqyasa qədər",
     "title": "Nə Edirik",
@@ -56,6 +59,7 @@
       }
     ]
   },
+
    "capabilities": {
     "badge": "İMKANLAR",
     "title": "Texnoloji Fokusumuz",
@@ -78,6 +82,7 @@
       }
     ]
   },
+
   "industries": {
     "badge": "Real dünya əməliyyatları üçün robotika",
     "title": "Xidmət Etdiyimiz Sahələr",
@@ -96,6 +101,7 @@
       { "emoji": "🔋", "label": "Enerji və Kommunal Xidmətlər" }
     ]
   },
+
     "reseller": {
     "badge": "Yerli Qlobal",
     "titleLineOne": "Sadəcə distribütor deyil",
@@ -118,5 +124,69 @@
         "description": "Müştərilərin robotikaya keçidini sürətləndirən maliyyələşdirmə və Robot-as-a-Service modellərini inkişaf etdiririk."
       }
     ]
+  },
+
+   "problemSolution": {
+    "badge": "Əlaqə",
+    "titleLineOne": "Problemi Bizə Deyin.",
+    "titleLineTwo": "Robotik Həlli Biz Tapaq",
+    "description": "Hansı robota ehtiyacınız olduğunu bilmək vacib deyil. Bizə hansı prosesin bahalı, təkrarlanan, əmək tələb edən, təhlükəli və ya səmərəsiz olduğunu deyin."
+  },
+
+   "market": {
+    "badge": "İstehsalçılar Üçün",
+    "title": "Bazarınızı Bizimlə Qurun",
+    "rowOne": [
+      { "number": "01", "label": "Texniki Servis" },
+      { "number": "02", "label": "Ehtiyat Hissə İnfrastrukturu" },
+      { "number": "03", "label": "Müştəri Təlimi" },
+      { "number": "04", "label": "Pilot İnkişafı" },
+      { "number": "05", "label": "Maliyyələşdirmə və RaaS" }
+    ],
+    "rowTwo": [
+      { "number": "06", "label": "Bazar İnkişafı" },
+      { "number": "07", "label": "Yerli Satış Təşkilatı" },
+      { "number": "08", "label": "Demo və Təcrübə Mərkəzləri" },
+      { "number": "09", "label": "Sistem İnteqrasiyası" },
+      { "number": "10", "label": "Mühəndislik Bacarığı" }
+    ]
+  },
+
+  "contact": {
+    "badge": "Əlaqə",
+    "title": "Gəlin Real Bir Şey Quraq",
+    "description": "İstər biznesiniz üçün robotik həllər axtarasınız, istərsə də texnologiya tərəfdaşlığı qurmaq istəyəsiniz — danışmağa hazırıq.",
+    "labels": {
+      "name": "Ad",
+      "namePlaceholder": "Adınız",
+      "phone": "Telefon",
+      "phonePlaceholder": "+994 __ ___ __ __",
+      "company": "Şirkət",
+      "companyPlaceholder": "Şirkət adı",
+      "email": "E-poçt",
+      "emailPlaceholder": "sizin@email.com",
+      "interest": "Maraqlandığım sahə",
+      "interestPlaceholder": "Seçim edin",
+      "message": "Mesaj",
+      "messagePlaceholder": "Layihəniz və ya çətinliyiniz haqqında bizə deyin",
+      "send": "Göndər"
+    },
+    "interestOptions": [
+      { "value": "robotics-solution", "label": "Robotik Həllər" },
+      { "value": "technology-partnership", "label": "Texnologiya Tərəfdaşlığı" },
+      { "value": "distribution", "label": "Distribusiya və Satış" },
+      { "value": "other", "label": "Digər" }
+    ]
+  },
+
+  "footer": {
+    "brandName": "GROUP ROBOTICS",
+    "brandCountry": "Azərbaycan",
+    "tagline": "Real Dünya Üçün Robotika İnfrastrukturu",
+    "domain": "grouprobotics.az",
+    "phone": "+994 50 223 47 00",
+    "contact": "Əlaqə",
+    "copyright": "© {year} Group Robotics. Bütün hüquqlar qorunur.",
+    "privacy": "Məxfilik Siyasəti"
   }
 }
