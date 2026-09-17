@@ -231,12 +231,15 @@
       "messagePlaceholder": "Расскажите о вашем проекте или задаче",
       "send": "Отправить"
     },
-    "interestOptions": [
-      { "value": "robotics-solution", "label": "Робототехнические решения" },
-      { "value": "technology-partnership", "label": "Технологическое партнёрство" },
-      { "value": "distribution", "label": "Дистрибуция и продажа" },
-      { "value": "other", "label": "Другое" }
-    ]
+   "interestOptions": [
+  { "value": "cleaning-solutions", "label": "Решения для уборки" },
+  { "value": "delivery-transport", "label": "Доставка и транспортировка материалов" },
+  { "value": "inspection-security", "label": "Инспекция, безопасность и мониторинг" },
+  { "value": "humanoid-robots", "label": "Гуманоидные роботы" },
+  { "value": "industrial-automation", "label": "Промышленная автоматизация и роботизированные манипуляторы" },
+  { "value": "partnership-distribution", "label": "Партнёрство / Дистрибуция" },
+  { "value": "other", "label": "Другое" }
+]
   },
 
    "footer": {

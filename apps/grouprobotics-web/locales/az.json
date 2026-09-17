@@ -172,11 +172,14 @@
       "send": "Göndər"
     },
     "interestOptions": [
-      { "value": "robotics-solution", "label": "Robotik Həllər" },
-      { "value": "technology-partnership", "label": "Texnologiya Tərəfdaşlığı" },
-      { "value": "distribution", "label": "Distribusiya və Satış" },
-      { "value": "other", "label": "Digər" }
-    ]
+  { "value": "cleaning-solutions", "label": "Təmizlik Həlləri" },
+  { "value": "delivery-transport", "label": "Çatdırılma və Material Daşınması" },
+  { "value": "inspection-security", "label": "Yoxlama, Təhlükəsizlik və Monitorinq" },
+  { "value": "humanoid-robots", "label": "Humanoid Robotlar" },
+  { "value": "industrial-automation", "label": "Sənaye Avtomatlaşdırması və Robot Qollar" },
+  { "value": "partnership-distribution", "label": "Tərəfdaşlıq / Distribusiya" },
+  { "value": "other", "label": "Digər" }
+]
   },
 
   "footer": {

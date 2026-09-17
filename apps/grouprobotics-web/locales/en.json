@@ -171,12 +171,15 @@
       "messagePlaceholder": "Tell us about your project or challenge",
       "send": "Send"
     },
-    "interestOptions": [
-      { "value": "robotics-solution", "label": "Robotic Solutions" },
-      { "value": "technology-partnership", "label": "Technology Partnership" },
-      { "value": "distribution", "label": "Distribution & Reselling" },
-      { "value": "other", "label": "Other" }
-    ]
+   "interestOptions": [
+  { "value": "cleaning-solutions", "label": "Cleaning Solutions" },
+  { "value": "delivery-transport", "label": "Delivery & Material Transport" },
+  { "value": "inspection-security", "label": "Inspection, Security & Monitoring" },
+  { "value": "humanoid-robots", "label": "Humanoid Robots" },
+  { "value": "industrial-automation", "label": "Industrial Automation & Robotic Arms" },
+  { "value": "partnership-distribution", "label": "Partnership / Distribution" },
+  { "value": "other", "label": "Other" }
+]
   },
 
    "footer": {

@@ -213,7 +213,7 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
           <div className={styles.actions}>
             <button type="submit" className={styles.submit}>
               {labels.send}
-              <Image src="/images/send.svg" alt="" width={16} height={16} aria-hidden="true" />
+              <Image src="/images/send.svg" alt="" width={20} height={20} aria-hidden="true" />
             </button>
           </div>
         </div>

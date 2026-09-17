@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion, useMotionValue, animate, type AnimationPlaybackControls } from 'framer-motion';
 import styles from '../../styles/Market/market.module.css';
 
 export interface MarketItem {
@@ -28,7 +28,8 @@ function MarqueeRow({
 }) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const setRef = useRef<HTMLDivElement>(null);
-  const controls = useAnimationControls();
+  const animationRef = useRef<AnimationPlaybackControls | null>(null);
+  const x = useMotionValue(0);
   const [setWidth, setSetWidth] = useState(0);
   const [copies, setCopies] = useState(MIN_COPIES);
 
@@ -75,19 +76,34 @@ function MarqueeRow({
     const from = direction === 'rtl' ? 0 : -setWidth;
     const to = direction === 'rtl' ? -setWidth : 0;
 
-    controls.set({ x: from });
-    controls.start({
-      x: to,
-      transition: { duration, ease: 'linear', repeat: Infinity },
+    animationRef.current?.stop();
+    x.set(from);
+    animationRef.current = animate(x, to, {
+      duration,
+      ease: 'linear',
+      repeat: Infinity,
     });
-  }, [setWidth, direction, controls]);
+
+    return () => {
+      animationRef.current?.stop();
+    };
+  }, [setWidth, direction, x]);
+
+  const handleMouseEnter = () => {
+    animationRef.current?.pause();
+  };
+
+  const handleMouseLeave = () => {
+    animationRef.current?.play();
+  };
 
   return (
     <div className={styles.marqueeViewport} ref={viewportRef}>
       <motion.div
         className={styles.marqueeTrack}
-        animate={controls}
-        style={{ opacity: setWidth > 0 ? 1 : 0 }}
+        style={{ x, opacity: setWidth > 0 ? 1 : 0 }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {Array.from({ length: copies }).map((_, copyIndex) => (
           <div
