@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { Navbar } from './components/Navbar/navbar-wrapper';
-import { isValidLocale, LOCALES } from '@/lib/i18n';
 import { Footer } from './components/Footer/footer-wrapper';
+import { HeroCtaProvider } from './hero-cta-context';
+import { isValidLocale, LOCALES } from '@/lib/i18n';
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -22,10 +23,10 @@ export default async function LocaleLayout({
   }
 
   return (
-    <>
+    <HeroCtaProvider>
       <Navbar locale={locale} />
       <main>{children}</main>
-      <Footer locale={locale}/>
-    </>
+      <Footer locale={locale} />
+    </HeroCtaProvider>
   );
 }

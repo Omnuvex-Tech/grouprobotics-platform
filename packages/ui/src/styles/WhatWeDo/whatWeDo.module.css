@@ -98,6 +98,7 @@
   align-self: flex-end;
   padding-bottom: 4px;
 }
+
 .showcase {
   position: relative;
   width: 100%;
@@ -215,6 +216,15 @@
   }
 
   .caption {
-    padding: 18px 20px 22px;
+    padding: 14px 20px 18px;
+    gap: 2px;
+  }
+
+  .captionDescription {
+    font-size: 13px;
+  }
+
+  .captionTitle {
+    font-size: 16px;
   }
 }

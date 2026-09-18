@@ -120,6 +120,7 @@
   .label {
     font-size: 15px;
   }
+  .title{font-size: 30px;}
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -16,12 +16,14 @@ interface NavbarUIProps {
   navLinks: NavLinkItem[];
   languageSwitcher: ReactNode;
   mobileLanguageSwitcher: ReactNode;
+  cta?: ReactNode;
 }
 
 export function NavbarUI({
   navLinks,
   languageSwitcher,
   mobileLanguageSwitcher,
+  cta
 }: NavbarUIProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -58,20 +60,18 @@ export function NavbarUI({
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`${styles.navLink} ${
-                    isActive(link.href) ? styles.navLinkActive : ''
-                  }`}
+                  className={`${styles.navLink} ${isActive(link.href) ? styles.navLinkActive : ''
+                    }`}
                   target={link.target}
-                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
-                >
+                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}>
                   {link.label}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
-
         <div className={styles.actions}>
+          {cta}
           <span className={styles.languageSwitcherWrap}>{languageSwitcher}</span>
         </div>
 

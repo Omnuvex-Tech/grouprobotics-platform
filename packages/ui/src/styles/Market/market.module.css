@@ -125,6 +125,7 @@
   .number {
     font-size: 11px;
   }
+  .title{font-size: 26px;}
 }
 
 @media (prefers-reduced-motion: reduce) {
