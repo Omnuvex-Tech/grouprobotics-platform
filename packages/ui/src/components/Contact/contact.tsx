@@ -137,7 +137,7 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id='contact'>
       <div className={styles.header}>
         <span className={styles.badge}>{badge}</span>
         <h2 className={styles.title}>{title}</h2>
