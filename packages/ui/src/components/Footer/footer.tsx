@@ -13,6 +13,8 @@ export interface FooterProps {
   tagline: string;
   domain: string;
   phone: string;
+  poweredByLabel: string;
+  poweredByHref?: string;
   navLinks: FooterLinkItem[];
   copyright: string;
   privacyLabel: string;
@@ -25,6 +27,8 @@ export function FooterUI({
   tagline,
   domain,
   phone,
+  poweredByLabel,
+  poweredByHref = 'https://omnuvex.tech',
   navLinks,
   copyright,
   privacyLabel,
@@ -55,6 +59,24 @@ export function FooterUI({
             <span className={styles.phone}>{phone}</span>
           </div>
         </div>
+
+        <a
+          href={poweredByHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.powered}
+        >
+          <span className={styles.poweredText}>{poweredByLabel}</span>
+          <span className={styles.poweredBadge}>
+            <Image
+              src="/images/omnuvex.svg"
+              alt="Omnuvex"
+              width={16}
+              height={16}
+              className={styles.poweredLogo}
+            />
+          </span>
+        </a>
 
         <div className={styles.divider} />
 

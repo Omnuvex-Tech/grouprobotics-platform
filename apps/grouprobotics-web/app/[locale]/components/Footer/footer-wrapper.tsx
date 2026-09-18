@@ -11,7 +11,8 @@ export function Footer({ locale }: { locale: string }) {
       brandCountry={t.footer.brandCountry}
       tagline={t.footer.tagline}
       domain={t.footer.domain}
-      phone={t.footer.phone}
+          phone={t.footer.phone}
+      poweredByLabel={t.footer.poweredBy}
       navLinks={[
         { label: t.navbar.navLinks.about, href: '#about' },
         { label: t.navbar.navLinks.capabilities, href: '#capabilities' },
