@@ -37,7 +37,7 @@ export function CapabilitiesUI({ badge, title, items }: CapabilitiesProps) {
   const [first, second, third, fourth] = items;
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id='capabilities'>
       <div className={styles.header}>
         <span className={styles.badge}>{badge}</span>
         <h2 className={styles.title}>{title}</h2>

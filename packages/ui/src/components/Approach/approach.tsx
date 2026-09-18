@@ -10,7 +10,7 @@ export interface ApproachProps {
 
 export function ApproachUI({ badge, title, paragraph, highlight, quote }: ApproachProps) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id='aboutus'>
       <div className={styles.header}>
         <span className={styles.badge}>{badge}</span>
         <h2 className={styles.title}>{title}</h2>

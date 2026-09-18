@@ -135,7 +135,7 @@ function Pill({ item }: { item: MarketItem }) {
 
 export function MarketUI({ badge, title, rowOne, rowTwo }: MarketProps) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id='partners'>
       <div className={styles.header}>
         <span className={styles.badge}>{badge}</span>
         <h2 className={styles.title}>{title}</h2>

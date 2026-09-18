@@ -135,7 +135,7 @@ function Pill({ item }: { item: IndustryItem }) {
 
 export function IndustriesUI({ badge, title, rowOne, rowTwo }: IndustriesProps) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id='industries'>
       <div className={styles.header}>
         <span className={styles.badge}>{badge}</span>
         <h2 className={styles.title}>{title}</h2>

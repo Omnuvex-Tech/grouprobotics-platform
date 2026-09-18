@@ -71,8 +71,9 @@ export function NavbarUI({
           </ul>
         </nav>
         <div className={styles.actions}>
-          {cta}
+        
           <span className={styles.languageSwitcherWrap}>{languageSwitcher}</span>
+            {cta}
         </div>
 
         <button
