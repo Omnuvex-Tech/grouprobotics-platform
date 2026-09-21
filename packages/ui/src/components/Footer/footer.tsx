@@ -71,6 +71,7 @@ export function FooterUI({
               </span>
             </Link>
           </motion.div>
+
           <motion.p
             className={styles.tagline}
             initial="hidden"
@@ -81,40 +82,19 @@ export function FooterUI({
           >
             {tagline}
           </motion.p>
+
           <motion.div
             className={styles.contact}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={itemVariants}
-            transition={{ delay: 0.25 }} >
+            transition={{ delay: 0.25 }}
+          >
             <span className={styles.domain}>{domain}</span>
             <span className={styles.phone}>{phone}</span>
           </motion.div>
         </div>
-
-        <motion.a
-          href={poweredByHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.powered}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={itemVariants}
-          transition={{ delay: 0.35 }}
-        >
-          <span className={styles.poweredText}>{poweredByLabel}</span>
-          <span className={styles.poweredBadge}>
-            <Image
-              src="/images/omnuvex.svg"
-              alt="Omnuvex"
-              width={16}
-              height={16}
-              className={styles.poweredLogo}
-            />
-          </span>
-        </motion.a>
 
         <motion.div
           className={styles.divider}
@@ -122,7 +102,7 @@ export function FooterUI({
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={itemVariants}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.3 }}
         />
 
         <div className={styles.bottom}>
@@ -136,7 +116,7 @@ export function FooterUI({
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={itemVariants}
-                transition={{ delay: 0.45 + index * 0.08 }}
+                transition={{ delay: 0.35 + index * 0.08 }}
               >
                 {link.label}
               </motion.a>
@@ -149,14 +129,35 @@ export function FooterUI({
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={itemVariants}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.5 }}
           >
             <span className={styles.copyright}>{copyright}</span>
-            {/* <a href={privacyHref} className={styles.privacyLink}>
-              {privacyLabel}
-            </a> */}
           </motion.div>
         </div>
+
+        {/* Figma-ya uyğun olaraq aşağı mərkəzə keçirildi */}
+        <motion.a
+          href={poweredByHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.powered}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+          transition={{ delay: 0.55 }}
+        >
+          <span className={styles.poweredBadge}>
+            <Image
+              src="/images/omnuvex.svg"
+              alt="Omnuvex"
+              width={16}
+              height={16}
+              className={styles.poweredLogo}
+            />
+          </span>
+          <span className={styles.poweredText}>{poweredByLabel}</span>
+        </motion.a>
       </div>
     </footer>
   );
