@@ -70,10 +70,10 @@
 }
 
 .description {
-  margin: 0;
   font-family: 'Sora', sans-serif;
   font-size: 17px;
   font-weight: 400;
+  margin-bottom: 17px;
   line-height: 1.5;
   color: #4b5563;
 }
@@ -82,7 +82,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top:32px;
+  margin-top: 32px;
   padding: 12px 28px;
   border-radius: 9999px;
   background: #007BFF;
@@ -90,7 +90,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 15px;
   font-weight: 600;
-      height: 55px;
+  height: 55px;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.15s ease;
 }

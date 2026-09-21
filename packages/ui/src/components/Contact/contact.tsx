@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 import styles from '../../styles/Contact/contact.module.css';
 
 export interface ContactOption {
@@ -38,6 +39,34 @@ export interface ContactProps {
     message: string;
   }) => void;
 }
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1.0] },
+  },
+};
+
+const wordContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.02,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const wordVariants: Variants = {
+  hidden: { opacity: 0, y: 4 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: 'easeOut' },
+  },
+};
 
 function InterestDropdown({
   label,
@@ -137,16 +166,58 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
   };
 
   return (
-    <section className={styles.section} id='contact'>
+    <section className={styles.section} id="contact" style={{ overflow: 'hidden' }}>
       <div className={styles.header}>
-        <span className={styles.badge}>{badge}</span>
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <motion.span
+          className={styles.badge}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={itemVariants}
+        >
+          {badge}
+        </motion.span>
+
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={itemVariants}
+          transition={{ delay: 0.08 }}
+        >
+          {title}
+        </motion.h2>
+
+        <motion.p
+          className={styles.description}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={wordContainerVariants}
+        >
+          {description.split(' ').map((word, i) => (
+            <motion.span
+              key={i}
+              variants={wordVariants}
+              style={{ display: 'inline-block', marginRight: '0.25em' }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.p>
       </div>
 
       <form className={styles.card} onSubmit={handleSubmit}>
         <div className={styles.column}>
-          <label className={styles.field}>
+          <motion.label
+            className={styles.field}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.1 }}
+          >
             <span className={styles.label}>{labels.name}</span>
             <input
               type="text"
@@ -155,9 +226,16 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
-          </label>
+          </motion.label>
 
-          <label className={styles.field}>
+          <motion.label
+            className={styles.field}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.2 }}
+          >
             <span className={styles.label}>{labels.phone}</span>
             <input
               type="tel"
@@ -166,9 +244,16 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
               value={phone}
               onChange={(event) => setPhone(event.target.value)}
             />
-          </label>
+          </motion.label>
 
-          <label className={styles.field}>
+          <motion.label
+            className={styles.field}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.3 }}
+          >
             <span className={styles.label}>{labels.company}</span>
             <input
               type="text"
@@ -177,9 +262,16 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
               value={company}
               onChange={(event) => setCompany(event.target.value)}
             />
-          </label>
+          </motion.label>
 
-          <label className={styles.field}>
+          <motion.label
+            className={styles.field}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.4 }}
+          >
             <span className={styles.label}>{labels.email}</span>
             <input
               type="email"
@@ -188,19 +280,34 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-          </label>
+          </motion.label>
         </div>
 
         <div className={styles.column}>
-          <InterestDropdown
-            label={labels.interest}
-            placeholder={labels.interestPlaceholder}
-            options={interestOptions}
-            value={interest}
-            onChange={setInterest}
-          />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.2 }}
+          >
+            <InterestDropdown
+              label={labels.interest}
+              placeholder={labels.interestPlaceholder}
+              options={interestOptions}
+              value={interest}
+              onChange={setInterest}
+            />
+          </motion.div>
 
-          <label className={`${styles.field} ${styles.fieldGrow}`}>
+          <motion.label
+            className={`${styles.field} ${styles.fieldGrow}`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.3 }}
+          >
             <span className={styles.label}>{labels.message}</span>
             <textarea
               className={styles.textarea}
@@ -208,14 +315,21 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
               value={message}
               onChange={(event) => setMessage(event.target.value)}
             />
-          </label>
+          </motion.label>
 
-          <div className={styles.actions}>
+          <motion.div
+            className={styles.actions}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.4 }}
+          >
             <button type="submit" className={styles.submit}>
               {labels.send}
               <Image src="/images/send.svg" alt="" width={20} height={20} aria-hidden="true" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </form>
     </section>

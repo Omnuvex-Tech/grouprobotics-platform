@@ -47,8 +47,7 @@ export type { ContactProps, ContactOption } from './components/Contact/contact';
 export { FooterUI as Footer } from './components/Footer/footer';
 export type { FooterProps, FooterLinkItem } from './components/Footer/footer';
 
-export { HeroCtaButton } from './components/HeroCtaButton/hero-cta-button';
+export { HeroCtaButton, StaticCtaButton } from './components/HeroCtaButton/hero-cta-button';
 export type { HeroCtaButtonProps } from './components/HeroCtaButton/hero-cta-button';
-
 
 export { cn } from "./lib/utils";

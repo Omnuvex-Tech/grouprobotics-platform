@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
 import styles from '../../styles/Footer/footer.module.css';
 
 export interface FooterLinkItem {
@@ -21,6 +24,15 @@ export interface FooterProps {
   privacyHref: string;
 }
 
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1.0] },
+  },
+};
+
 export function FooterUI({
   brandName,
   brandCountry,
@@ -28,43 +40,69 @@ export function FooterUI({
   domain,
   phone,
   poweredByLabel,
-  poweredByHref = 'https://omnuvex.tech',
+  poweredByHref = 'https://omnuvex.net',
   navLinks,
   copyright,
   privacyLabel,
   privacyHref,
 }: FooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={{ overflow: 'hidden' }}>
       <div className={styles.inner}>
         <div className={styles.top}>
-          <Link href="/" className={styles.brand}>
-            <Image
-              src="/images/logo.svg"
-              alt={brandName}
-              width={36}
-              height={36}
-              className={styles.brandLogo}
-            />
-            <span className={styles.brandText}>
-              <span className={styles.brandName}>{brandName}</span>
-              <span className={styles.brandCountry}>{brandCountry}</span>
-            </span>
-          </Link>
-
-          <p className={styles.tagline}>{tagline}</p>
-
-          <div className={styles.contact}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.05 }}
+          >
+            <Link href="/" className={styles.brand}>
+              <Image
+                src="/images/Logo.svg"
+                alt={brandName}
+                width={36}
+                height={36}
+                className={styles.brandLogo}
+              />
+              <span className={styles.brandText}>
+                <span className={styles.brandName}>{brandName}</span>
+                <span className={styles.brandCountry}>{brandCountry}</span>
+              </span>
+            </Link>
+          </motion.div>
+          <motion.p
+            className={styles.tagline}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.15 }}
+          >
+            {tagline}
+          </motion.p>
+          <motion.div
+            className={styles.contact}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.25 }} >
             <span className={styles.domain}>{domain}</span>
             <span className={styles.phone}>{phone}</span>
-          </div>
+          </motion.div>
         </div>
 
-        <a
+        <motion.a
           href={poweredByHref}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.powered}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+          transition={{ delay: 0.35 }}
         >
           <span className={styles.poweredText}>{poweredByLabel}</span>
           <span className={styles.poweredBadge}>
@@ -76,25 +114,48 @@ export function FooterUI({
               className={styles.poweredLogo}
             />
           </span>
-        </a>
+        </motion.a>
 
-        <div className={styles.divider} />
+        <motion.div
+          className={styles.divider}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+          transition={{ delay: 0.4 }}
+        />
 
         <div className={styles.bottom}>
           <nav className={styles.nav}>
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className={styles.navLink}>
+            {navLinks.map((link, index) => (
+              <motion.a
+                key={link.href}
+                href={link.href}
+                className={styles.navLink}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={itemVariants}
+                transition={{ delay: 0.45 + index * 0.08 }}
+              >
                 {link.label}
-              </a>
+              </motion.a>
             ))}
           </nav>
 
-          <div className={styles.legal}>
+          <motion.div
+            className={styles.legal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={itemVariants}
+            transition={{ delay: 0.6 }}
+          >
             <span className={styles.copyright}>{copyright}</span>
             <a href={privacyHref} className={styles.privacyLink}>
               {privacyLabel}
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </footer>

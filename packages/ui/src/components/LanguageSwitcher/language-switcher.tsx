@@ -10,7 +10,8 @@ export interface LanguageSwitcherProps {
   locales: string[];
   activeLocale: string;
   onLocaleChange: (locale: string) => void;
-  variant?: 'dropdown' | 'inline';
+  variant?: 'dropdown' | 'inline' | 'mobile';
+  labels?: Record<string, string>;
 }
 
 const LanguageSwitcher = ({
@@ -18,6 +19,7 @@ const LanguageSwitcher = ({
   activeLocale,
   onLocaleChange,
   variant = 'dropdown',
+  labels,
 }: LanguageSwitcherProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -33,6 +35,7 @@ const LanguageSwitcher = ({
   }, []);
 
   const otherLocales = locales.filter((code) => code !== activeLocale);
+  const displayName = (code: string) => labels?.[code] ?? code.toUpperCase();
 
   const handleSelect = (code: string) => {
     onLocaleChange(code);
@@ -62,6 +65,54 @@ const LanguageSwitcher = ({
             />
           </button>
         ))}
+      </div>
+    );
+  }
+
+  if (variant === 'mobile') {
+    return (
+      <div className={styles.mobileWrapper} ref={rootRef}>
+        {isOpen && (
+          <ul className={styles.mobilePanel} role="listbox">
+            {otherLocales.map((code) => (
+              <li key={code} role="option" aria-selected={false}>
+                <button
+                  type="button"
+                  className={styles.mobileOption}
+                  onClick={() => handleSelect(code)}
+                >
+                  <Image
+                    src={flagSrc(code)}
+                    alt=""
+                    width={22}
+                    height={22}
+                    className={styles.flag}
+                    aria-hidden="true"
+                  />
+                  <span className={styles.mobileOptionLabel}>{displayName(code)}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <button
+          type="button"
+          className={`${styles.mobileTrigger} ${isOpen ? styles.mobileTriggerOpen : ''}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}
+        >
+          <Image
+            src={flagSrc(activeLocale)}
+            alt=""
+            width={22}
+            height={22}
+            className={styles.flag}
+            aria-hidden="true"
+          />
+          <span className={styles.mobileTriggerLabel}>{displayName(activeLocale)}</span>
+        </button>
       </div>
     );
   }

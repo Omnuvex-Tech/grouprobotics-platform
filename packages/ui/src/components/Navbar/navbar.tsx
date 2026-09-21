@@ -17,13 +17,15 @@ interface NavbarUIProps {
   languageSwitcher: ReactNode;
   mobileLanguageSwitcher: ReactNode;
   cta?: ReactNode;
+   mobileCta?: ReactNode;
 }
 
 export function NavbarUI({
   navLinks,
   languageSwitcher,
   mobileLanguageSwitcher,
-  cta
+  cta,
+  mobileCta
 }: NavbarUIProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -94,49 +96,54 @@ export function NavbarUI({
         </button>
       </div>
 
-      <div className={`${styles.mobileOverlay} ${isMenuOpen ? styles.mobileOverlayOpen : ''}`}>
-        <div className={styles.mobileHeader}>
-          <Link href="/" className={styles.logo} onClick={closeMenu}>
-            <Image src="/images/logo.svg" alt="Logo" width={100} height={32} className={styles.logoImage} />
-          </Link>
+    <div className={`${styles.mobileOverlay} ${isMenuOpen ? styles.mobileOverlayOpen : ''}`}>
+  <div className={styles.mobileHeaderBar}>
+    <Link href="/" className={styles.logo} onClick={closeMenu}>
+      <Image src="/images/Logo.svg" alt="Logo" width={100} height={32} className={styles.logoImage} />
+    </Link>
 
-          <button
-            type="button"
-            className={styles.closeBtn}
-            aria-label="Menyunu bağla"
+    <button
+      type="button"
+      className={styles.closeBtn}
+      aria-label="Menyunu bağla"
+      onClick={closeMenu}
+    >
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M4 4L16 16M16 4L4 16"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <nav className={styles.mobileNavArea}>
+    <ul className={styles.mobileNavList}>
+      {navLinks.map((link) => (
+        <li key={link.href}>
+          <Link
+            href={link.href}
+            className={styles.mobileNavLink}
+            target={link.target}
+            rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
             onClick={closeMenu}
           >
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M4 4L16 16M16 4L4 16"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-        </div>
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </nav>
 
-        <nav className={styles.mobileNavArea}>
-          <ul className={styles.mobileNavList}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={styles.mobileNavLink}
-                  target={link.target}
-                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  onClick={closeMenu}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className={styles.mobileLangRow}>{mobileLanguageSwitcher}</div>
-      </div>
+ <div className={styles.mobileBottomRow}>
+  {mobileLanguageSwitcher}
+  <span onClick={closeMenu} className={styles.mobileCtaWrap}>
+    {mobileCta}
+  </span>
+</div>
+</div>
     </header>
   );
 }

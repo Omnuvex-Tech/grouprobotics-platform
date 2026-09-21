@@ -109,3 +109,75 @@
 .inlineOptionActive .code {
   color: #ffffff;
 }
+
+.mobileWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+
+.mobileTrigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 9999px;
+  padding: 0 20px;
+  height: 52px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.mobileTrigger:hover,
+.mobileTriggerOpen {
+  background: #e9eaed;
+}
+
+.mobileTriggerLabel {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.mobilePanel {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  min-width: 200px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #f1f1f3;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.1);
+  z-index: 60;
+}
+
+.mobileOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.mobileOption:hover {
+  background: #f3f4f6;
+}
+
+.mobileOptionLabel {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #111827;
+}

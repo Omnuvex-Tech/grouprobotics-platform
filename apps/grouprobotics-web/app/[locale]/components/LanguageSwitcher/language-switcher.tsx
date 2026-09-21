@@ -4,12 +4,18 @@ import { useRouter, usePathname } from 'next/navigation';
 import { LanguageSwitcher as LanguageSwitcherUI } from '@repo/ui';
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n';
 
+const LANGUAGE_LABELS: Record<string, string> = {
+  az: 'Azərbaycan',
+  en: 'English',
+  ru: 'Русский',
+};
+
 const LanguageSwitcher = ({
   locale,
   variant = 'dropdown',
 }: {
   locale: string;
-  variant?: 'dropdown' | 'inline';
+  variant?: 'dropdown' | 'inline' | 'mobile';
 }) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -35,6 +41,7 @@ const LanguageSwitcher = ({
       activeLocale={locale}
       onLocaleChange={handleLocaleChange}
       variant={variant}
+      labels={LANGUAGE_LABELS}
     />
   );
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { Navbar as NavbarUI, HeroCtaButton } from '@repo/ui';
+import { Navbar as NavbarUI, HeroCtaButton, StaticCtaButton } from '@repo/ui';
 import { LanguageSwitcher } from '@/app/[locale]/components/LanguageSwitcher/language-switcher';
 import { getDictionary } from '@/lib/i18n';
 import { useHeroCta } from '../../hero-cta-context';
@@ -21,8 +21,8 @@ export function Navbar({ locale }: { locale: string }) {
     <NavbarUI
       navLinks={navLinks}
       languageSwitcher={<LanguageSwitcher locale={locale} />}
-      mobileLanguageSwitcher={<LanguageSwitcher locale={locale} variant="inline" />}
+      mobileLanguageSwitcher={<LanguageSwitcher locale={locale} variant="mobile" />}
       cta={isHeroCtaInNavbar && <HeroCtaButton label={t.connect.cta} variant="navbar" />}
-    />
+mobileCta={<StaticCtaButton label={t.connect.cta} href="#contact" />}    />
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValue, animate, type AnimationPlaybackControls } from 'framer-motion';
+import { motion, useMotionValue, animate, type AnimationPlaybackControls, Variants } from 'framer-motion';
 import styles from '../../styles/Market/market.module.css';
 
 export interface MarketItem {
@@ -18,6 +18,15 @@ export interface MarketProps {
 
 const PIXELS_PER_SECOND = 40;
 const MIN_COPIES = 2;
+
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] },
+  },
+};
 
 function MarqueeRow({
   items,
@@ -98,7 +107,14 @@ function MarqueeRow({
   };
 
   return (
-    <div className={styles.marqueeViewport} ref={viewportRef}>
+    <motion.div
+      className={styles.marqueeViewport}
+      ref={viewportRef}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+    >
       <motion.div
         className={styles.marqueeTrack}
         style={{ x, opacity: setWidth > 0 ? 1 : 0 }}
@@ -118,7 +134,7 @@ function MarqueeRow({
           </div>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -135,10 +151,28 @@ function Pill({ item }: { item: MarketItem }) {
 
 export function MarketUI({ badge, title, rowOne, rowTwo }: MarketProps) {
   return (
-    <section className={styles.section} id='partners'>
+    <section className={styles.section} id="partners" style={{ overflow: 'hidden' }}>
       <div className={styles.header}>
-        <span className={styles.badge}>{badge}</span>
-        <h2 className={styles.title}>{title}</h2>
+        <motion.span
+          className={styles.badge}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+        >
+          {badge}
+        </motion.span>
+
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+          transition={{ delay: 0.08 }}
+        >
+          {title}
+        </motion.h2>
       </div>
 
       <div className={styles.rows}>

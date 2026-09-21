@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 import styles from '../../styles/ProblemSolution/problemSolution.module.css';
 
 export interface ProblemSolutionProps {
@@ -10,6 +13,34 @@ export interface ProblemSolutionProps {
   imageAlt: string;
 }
 
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] },
+  },
+};
+
+const wordContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.02,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const wordVariants: Variants = {
+  hidden: { opacity: 0, y: 4 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: 'easeOut' },
+  },
+};
+
 export function ProblemSolutionUI({
   badge,
   titleLineOne,
@@ -19,18 +50,58 @@ export function ProblemSolutionUI({
   imageAlt,
 }: ProblemSolutionProps) {
   return (
-    <section className={styles.section} id='technologies'>
+    <section className={styles.section} id="technologies" style={{ overflow: 'hidden' }}>
       <div className={styles.header}>
-        <span className={styles.badge}>{badge}</span>
-        <h2 className={styles.title}>
+        <motion.span
+          className={styles.badge}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+        >
+          {badge}
+        </motion.span>
+
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+          transition={{ delay: 0.08 }}
+        >
           {titleLineOne}
           <br />
           {titleLineTwo}
-        </h2>
-        <p className={styles.description}>{description}</p>
+        </motion.h2>
+
+        <motion.p
+          className={styles.description}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={wordContainerVariants}
+        >
+          {description.split(' ').map((word, i) => (
+            <motion.span
+              key={i}
+              variants={wordVariants}
+              style={{ display: 'inline-block', marginRight: '0.25em' }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.p>
       </div>
 
-      <div className={styles.imageWrap}>
+      <motion.div
+        className={styles.imageWrap}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeInUp}
+        transition={{ delay: 0.15 }}
+      >
         <Image
           src={image}
           alt={imageAlt}
@@ -39,7 +110,7 @@ export function ProblemSolutionUI({
           className={styles.image}
           priority
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

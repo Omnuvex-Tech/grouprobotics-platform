@@ -21,3 +21,11 @@ export function HeroCtaButton({ label, href = '#contact', variant }: HeroCtaButt
     </motion.a>
   );
 }
+
+export function StaticCtaButton({ label, href = '#contact' }: { label: string; href?: string }) {
+  return (
+    <a href={href} className={styles.heroVariant}>
+      {label}
+    </a>
+  );
+}
