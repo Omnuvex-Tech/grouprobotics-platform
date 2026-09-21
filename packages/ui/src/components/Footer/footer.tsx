@@ -152,9 +152,9 @@ export function FooterUI({
             transition={{ delay: 0.6 }}
           >
             <span className={styles.copyright}>{copyright}</span>
-            <a href={privacyHref} className={styles.privacyLink}>
+            {/* <a href={privacyHref} className={styles.privacyLink}>
               {privacyLabel}
-            </a>
+            </a> */}
           </motion.div>
         </div>
       </div>
