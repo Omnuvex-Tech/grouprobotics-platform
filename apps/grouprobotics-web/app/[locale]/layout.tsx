@@ -5,7 +5,7 @@ import { Navbar } from './components/Navbar/navbar-wrapper';
 import { Footer } from './components/Footer/footer-wrapper';
 import { HeroCtaProvider } from './hero-cta-context';
 import { isValidLocale, LOCALES } from '@/lib/i18n';
-import { project } from '@/config/project'; // project.ts faylının dəqiq yolunu göstərin
+import { project } from '@/config/project';
 
 export const metadata: Metadata = {
   title: {
