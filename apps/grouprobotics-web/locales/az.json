@@ -60,28 +60,33 @@
     ]
   },
 
-   "capabilities": {
-    "badge": "İMKANLAR",
-    "title": "Texnoloji Fokusumuz",
-    "items": [
-      {
-        "title": "Humanoid və Cisimləşmiş AI",
-        "description": "Mürəkkəb real dünya tapşırıqlarını yerinə yetirən ağıllı maşınlar."
-      },
-      {
-        "title": "Kommersiya və Xidmət Robotikası",
-        "description": "Təmizlik, çatdırılma, qonaqpərvərlik, pərakəndə satış, səhiyyə, ofis və ictimai mühitlər üçün avtonom həllər."
-      },
-      {
-        "title": "Sənaye Robotikası və Avtomatlaşdırma",
-        "description": "Məhsuldarlığı, keyfiyyəti və iş yerinin səmərəliliyini artırmaq üçün nəzərdə tutulmuş kollaborativ robotlar, sənaye avtomatlaşdırması və robotika həlləri."
-      },
-      {
-        "title": "Avtonom Yoxlama",
-        "description": "Sənaye yoxlaması və uzaqdan monitorinq üçün mobil və dördayaqlı robotlar."
-      }
-    ]
-  },
+"capabilities": {
+  "badge": "İMKANLAR",
+  "title": "Texnoloji Diqqət Mərkəzimiz",
+  "items": [
+    {
+      "title": "Humanoid Robotlar və Təcəssüm Olunmuş SÜ",
+      "description": "Müştəri xidməti, təqdimatlar, dəstək və əməliyyatlar üçün humanoid robotlar"
+    },
+    {
+      "title": "Sənaye Robot Qolları və Kobotlar",
+      "description": "İstehsalat, yığma, çeşidləmə, qaynaq və materialların daşınmasının avtomatlaşdırılması"
+    },
+    {
+      "title": "Dördayaqlı Təftiş və Təhlükəsizlik Robotları",
+      "description": "Sənaye obyektləri üçün avtonom patrulluq, təhlükəsizlik, monitorinq və təftiş"
+    },
+    {
+      "title": "Avtonom Təmizlik Robotları",
+      "description": "Kommertsiiya, sənaye və ictimai məkanlarda avtonom təmizlik üçün intellektual robot həlləri"
+    },
+    {
+      "title": "Çatdırılma və Daxili Logistika Robotları",
+      "description": "Obyekt daxilində malların, ehtiyat hissələrinin və materialların avtonom daşınması"
+    }
+  ]
+},
+
 
   "industries": {
     "badge": "Real dünya əməliyyatları üçün robotika",
@@ -189,7 +194,7 @@
     "domain": "grouprobotics.az",
     "phone": "+994 50 223 47 00",
     "contact": "Əlaqə",
-    "poweredBy": "Powered by Omnuvex",
+    "poweredBy": "Powered by",
     "copyright": "© {year} Group Robotics. Bütün hüquqlar qorunur.",
     "privacy": "Məxfilik Siyasəti"
   }

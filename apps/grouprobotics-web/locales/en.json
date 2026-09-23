@@ -60,27 +60,31 @@
     ]
   },
 
-   "capabilities": {
-    "badge": "CAPABILITIES",
-    "title": "Our Technology Focus",
-    "items": [
-      {
-        "title": "Humanoid & Embodied AI",
-        "description": "Intelligent machines performing complex real-world tasks."
-      },
-      {
-        "title": "Commercial & Service Robotics",
-        "description": "Autonomous solutions for cleaning, delivery, hospitality, retail, healthcare, offices and public environments."
-      },
-      {
-        "title": "Industrial Robotics & Automation",
-        "description": "Collaborative robots, industrial automation and robotic solutions designed to improve productivity, quality and workplace efficiency."
-      },
-      {
-        "title": "Autonomous Inspection",
-        "description": "Mobile and quadruped robots for industrial inspection and remote monitoring."
-      }
-    ]
+  "capabilities": {
+  "badge": "CAPABILITIES",
+  "title": "Our Technology Focus",
+  "items": [
+    {
+      "title": "Humanoid Robots and Embodied AI",
+      "description": "Humanoid robots for customer service, presentations, support & operations"
+    },
+    {
+      "title": "Industrial Robotic Arms and Cobots",
+      "description": "Automation of manufacturing, assembly, sorting, welding & material handling"
+    },
+    {
+      "title": "Quadruped Inspection and Security Robots",
+      "description": "Autonomous patrol, security, monitoring & inspection for industrial facilities"
+    },
+    {
+      "title": "Autonomous Cleaning Robots",
+      "description": "Intelligent robotic solutions for autonomous cleaning in commercial, industrial & public spaces"
+    },
+    {
+      "title": "Delivery and Internal Logistics Robots",
+      "description": "Autonomous transport of goods, spare parts & materials within facilities"
+    }
+  ]
   },
 
    "industries": {
@@ -189,7 +193,7 @@
     "domain": "grouprobotics.az",
     "phone": "+994 50 223 47 00",
     "contact": "Contact",
-    "poweredBy": "Powered by Omnuvex",
+    "poweredBy": "Powered by",
     "copyright": "© {year} Group Robotics. All Rights Reserved.",
     "privacy": "Privacy Policy"
   }

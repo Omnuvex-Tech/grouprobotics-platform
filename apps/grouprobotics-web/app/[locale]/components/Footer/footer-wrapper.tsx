@@ -14,7 +14,7 @@ export function Footer({ locale }: { locale: string }) {
           phone={t.footer.phone}
       poweredByLabel={t.footer.poweredBy}
       navLinks={[
-        { label: t.navbar.navLinks.about, href: '#aboutus' },
+        { label: t.navbar.navLinks.about, href: '#about-us' },
         { label: t.navbar.navLinks.capabilities, href: '#capabilities' },
         { label: t.navbar.navLinks.technologies, href: '#technologies' },
         { label: t.navbar.navLinks.industries, href: '#industries' },
