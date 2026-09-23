@@ -22,7 +22,7 @@ const itemVariants: Variants = {
 
 export function ApproachUI({ badge, title, paragraph, highlight, quote }: ApproachProps) {
   return (
-    <section className={styles.section} id='aboutus' style={{ overflow: 'hidden' }}>
+    <section className={styles.section} id='about-us' style={{ overflow: 'hidden' }}>
       <div className={styles.header}>
         <motion.span 
           className={styles.badge}

@@ -135,7 +135,6 @@ export function FooterUI({
           </motion.div>
         </div>
 
-        {/* Figma-ya uyğun olaraq aşağı mərkəzə keçirildi */}
         <motion.a
           href={poweredByHref}
           target="_blank"
@@ -147,16 +146,17 @@ export function FooterUI({
           variants={itemVariants}
           transition={{ delay: 0.55 }}
         >
-          <span className={styles.poweredBadge}>
+        
+          <span className={styles.poweredText}>{poweredByLabel}</span>
+            <span className={styles.poweredBadge}>
             <Image
               src="/images/omnuvex.svg"
               alt="Omnuvex"
-              width={16}
-              height={16}
+              width={30}
+              height={30}
               className={styles.poweredLogo}
             />
           </span>
-          <span className={styles.poweredText}>{poweredByLabel}</span>
         </motion.a>
       </div>
     </footer>

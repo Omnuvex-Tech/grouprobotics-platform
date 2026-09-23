@@ -89,7 +89,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   margin-top: 50px;
   text-decoration: none;
   padding: 0 0 0 108px;
@@ -107,7 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
+  width: 90px;
   height: 33px;
   border-radius: 50%;
   flex-shrink: 0;
@@ -115,7 +114,7 @@
 }
 
 .poweredLogo {
-  width: 32px;
+  width: 86px;
   height: 33px;
   object-fit: contain;
 }

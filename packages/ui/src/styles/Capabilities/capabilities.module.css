@@ -1,4 +1,4 @@
-.section {
+/* .section {
     background: #f5f5f7b8;
     padding: 65px 24px;
 }
@@ -146,4 +146,141 @@
     .cardDescription {
         font-size: 12px;
     }
+} */
+
+
+
+
+
+.section {
+  background: #f5f5f7b8;
+  padding: 65px 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  margin: 0 auto 37px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #0057b5;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  padding: 12px 14px;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  height: 320px;
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardCaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #ffffffcf;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0057b5;
+}
+
+.cardDescription {
+  color: #4b556370;
+  margin: 0;
+  font-family: Sora, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 16px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 260px;
+  }
+
+  .cardCaption {
+    padding: 14px 18px 16px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
 }
