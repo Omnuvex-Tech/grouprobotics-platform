@@ -197,8 +197,7 @@ function CapabilityCard({ item }: { item: CapabilityItem }) {
         <div className={styles.cardCaption}>
           <p className={styles.cardTitle}>{item.title}</p>
           <motion.p className={styles.cardDescription} variants={wordContainerVariants}>
-            {item.description.split(' ').map((word, i) => (
-              <motion.span
+{(item.description ?? '').split(' ').map((word, i) => (              <motion.span
                 key={i}
                 variants={wordVariants}
                 style={{ display: 'inline-block', marginRight: '0.25em' }}

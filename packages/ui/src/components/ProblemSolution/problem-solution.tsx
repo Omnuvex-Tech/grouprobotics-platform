@@ -77,7 +77,7 @@ export function ProblemSolutionUI({
           viewport={{ once: true, amount: 0.3 }}
           variants={wordContainerVariants}
         >
-          {description.split(' ').map((word, i) => (
+       {(description ?? '').split(' ').map((word, i) => (
             <motion.span
               key={i}
               variants={wordVariants}

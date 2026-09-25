@@ -149,7 +149,7 @@ export function WhatWeDoUI({ badge, title, items }: WhatWeDoProps) {
                   animate="visible"
                   variants={wordContainerVariants}
                 >
-                  {active.description.split(' ').map((word, i) => (
+               {(active.description ?? '').split(' ').map((word, i) => (
                     <motion.span
                       key={i}
                       variants={wordVariants}

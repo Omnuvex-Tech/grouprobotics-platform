@@ -88,7 +88,7 @@ export function ResellerUI({ badge, title, items }: ResellerProps) {
               className={styles.cardDescription}
               variants={wordContainerVariants}
             >
-              {item.description.split(' ').map((word, i) => (
+         {(item.description ?? '').split(' ').map((word, i) => (
                 <motion.span
                   key={i}
                   variants={wordVariants}

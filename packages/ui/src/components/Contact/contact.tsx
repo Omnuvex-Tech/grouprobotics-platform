@@ -133,9 +133,8 @@ function InterestDropdown({
               <li key={option.value} role="option" aria-selected={option.value === value}>
                 <button
                   type="button"
-                  className={`${styles.dropdownOption} ${
-                    option.value === value ? styles.dropdownOptionActive : ''
-                  }`}
+                  className={`${styles.dropdownOption} ${option.value === value ? styles.dropdownOptionActive : ''
+                    }`}
                   onClick={() => {
                     onChange(option.value);
                     setIsOpen(false);
@@ -196,14 +195,13 @@ export function ContactUI({ badge, title, description, labels, interestOptions, 
           viewport={{ once: true, amount: 0.3 }}
           variants={wordContainerVariants}
         >
-          {description.split(' ').map((word, i) => (
-            <motion.span
-              key={i}
-              variants={wordVariants}
-              style={{ display: 'inline-block', marginRight: '0.25em' }}
-            >
-              {word}
-            </motion.span>
+          {(description ?? '').split(' ').map((word, i) => (<motion.span
+            key={i}
+            variants={wordVariants}
+            style={{ display: 'inline-block', marginRight: '0.25em' }}
+          >
+            {word}
+          </motion.span>
           ))}
         </motion.p>
       </div>
