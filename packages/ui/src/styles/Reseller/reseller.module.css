@@ -29,6 +29,7 @@
     font-family: 'Sora', sans-serif;
     font-size: 35px;
     font-weight: 700;
+    max-width: 64%;
     line-height: 1.2;
     color: #0f172a;
 }

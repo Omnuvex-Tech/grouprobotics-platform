@@ -1,16 +1,17 @@
 import { Approach as ApproachUI } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { getApproach } from '@/lib/api';
 
-export function Approach({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+export async function Approach({ locale }: { locale: string }) {
+  const data = await getApproach();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
 
   return (
     <ApproachUI
-      badge={t.approach.badge}
-      title={t.approach.title}
-      paragraph={t.approach.paragraph}
-      highlight={t.approach.highlight}
-      quote={t.approach.quote}
+      badge={data.badge[lang]}
+      title={data.title[lang]}
+      paragraph={data.paragraph[lang]}
+      highlight={data.highlight[lang]}
+      quote={data.quote[lang]}
     />
   );
 }

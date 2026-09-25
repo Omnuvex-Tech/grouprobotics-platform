@@ -1,24 +1,17 @@
-
-
 import { Capabilities as CapabilitiesUI, type CapabilityItem } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { getCapabilities } from '@/lib/api';
 
-const IMAGES = [
-  '/images/capabilities1.png',
-  '/images/capabilities2.png',
-  '/images/capabilities4.png',
-  '/images/capabilities3.png',
-  '/images/capabilities5.jpg',
-];
+const FALLBACK_IMAGE = '/images/capabilities1.png';
 
-export function Capabilities({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+export async function Capabilities({ locale }: { locale: string }) {
+  const data = await getCapabilities();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
 
-  const items: CapabilityItem[] = t.capabilities.items.map((item, index) => ({
-    image: IMAGES[index] ?? IMAGES[0]!,
-    title: item.title,
-    description: item.description,
+  const items: CapabilityItem[] = data.cards.map((card) => ({
+    image: card.image || FALLBACK_IMAGE,
+    title: card.title[lang],
+    description: card.description[lang],
   }));
 
-  return <CapabilitiesUI badge={t.capabilities.badge} title={t.capabilities.title} items={items} />;
+  return <CapabilitiesUI badge={data.badge[lang]} title={data.title[lang]} items={items} />;
 }

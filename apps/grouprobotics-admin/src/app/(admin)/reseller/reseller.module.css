@@ -1,0 +1,240 @@
+.page {
+    padding: 28px 32px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.headerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.backButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.title {
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.saveButton {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 9999px;
+    padding: 10px 24px;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.saveButton:hover:not(:disabled) {
+    background: #1657c4;
+}
+
+.saveButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.subtitle {
+    margin: -8px 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.saveMessage {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.saveMessageSuccess {
+    color: #16a34a;
+}
+
+.saveMessageError {
+    color: #ef4444;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.langTabs {
+    display: inline-flex;
+    background: #f1f5f9;
+    border-radius: 9999px;
+    padding: 3px;
+    gap: 2px;
+    width: fit-content;
+}
+
+.langTab {
+    border: none;
+    background: transparent;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.langTabActive {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.input {
+    height: 46px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    color: #0f172a;
+    outline: none;
+    background: #ffffff;
+}
+
+.input:focus {
+    border-color: #007bff;
+}
+
+.cardsHeaderRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #93c5fd;
+    color: #007bff;
+    border-radius: 9999px;
+    padding: 7px 16px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.cardItem {
+    position: relative;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: grab;
+}
+
+.cardItemDragging {
+    opacity: 0.4;
+}
+
+.cardItemDragOver {
+    outline: 2px dashed #007bff;
+    outline-offset: 2px;
+}
+
+.cardTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardDeleteButton {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cardDeleteButton:hover {
+    color: #ef4444;
+}
+
+.smallLabel {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.smallInput {
+    height: 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    color: #0f172a;
+    outline: none;
+    background: #ffffff;
+}
+
+.smallInput:focus {
+    border-color: #007bff;
+}

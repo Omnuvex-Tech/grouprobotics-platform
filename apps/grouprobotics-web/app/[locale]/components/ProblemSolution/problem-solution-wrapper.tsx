@@ -1,17 +1,19 @@
 import { ProblemSolution as ProblemSolutionUI } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { getProblemSolution } from '@/lib/api';
 
-export function ProblemSolution({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+const FALLBACK_IMAGE = '/images/solution.jpg';
+
+export async function ProblemSolution({ locale }: { locale: string }) {
+  const data = await getProblemSolution();
+  const lang = (locale in data.headline ? locale : 'az') as keyof typeof data.headline;
 
   return (
     <ProblemSolutionUI
-      badge={t.problemSolution.badge}
-      titleLineOne={t.problemSolution.titleLineOne}
-      titleLineTwo={t.problemSolution.titleLineTwo}
-      description={t.problemSolution.description}
-      image="/images/solution.jpg"
-      imageAlt={t.problemSolution.titleLineOne}
+      badge={data.badge[lang]}
+      title={data.headline[lang]}
+      description={data.description[lang]}
+      image={data.backgroundImage || FALLBACK_IMAGE}
+      imageAlt={data.headline[lang]}
     />
   );
 }

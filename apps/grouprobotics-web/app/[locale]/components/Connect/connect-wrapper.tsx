@@ -3,11 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { Connect as ConnectUI, HeroCtaButton } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import type { ConnectData } from '@/lib/api';
 import { useHeroCta } from '../../hero-cta-context';
 
-export function Connect({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+export function Connect({ data, locale }: { data: ConnectData; locale: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { isHeroCtaInNavbar, setIsHeroCtaInNavbar } = useHeroCta();
 
@@ -17,12 +16,21 @@ export function Connect({ locale }: { locale: string }) {
     setIsHeroCtaInNavbar(!isHeroInView);
   }, [isHeroInView, setIsHeroCtaInNavbar]);
 
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
+
   return (
     <div ref={sectionRef}>
       <ConnectUI
-        title={t.connect.title}
-        description={t.connect.description}
-        cta={!isHeroCtaInNavbar && <HeroCtaButton label={t.connect.cta} variant="hero" />}
+        title={data.title[lang]}
+        description={data.description[lang]}
+        bgColor={data.bgColor}
+        imageLeft={data.imageLeft}
+        imageRight={data.imageRight}
+        cta={
+          !isHeroCtaInNavbar && (
+            <HeroCtaButton label={data.cta[lang]} variant="hero" />
+          )
+        }
       />
     </div>
   );

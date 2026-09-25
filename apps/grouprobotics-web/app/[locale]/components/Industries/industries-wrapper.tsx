@@ -1,15 +1,25 @@
-import { Industries as IndustriesUI } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { Industries as IndustriesUI, type IndustryItem } from '@repo/ui';
+import { getIndustries } from '@/lib/api';
 
-export function Industries({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+export async function Industries({ locale }: { locale: string }) {
+  const data = await getIndustries();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
+
+  const items: IndustryItem[] = data.tags.map((tag) => ({
+    emoji: tag.icon,
+    label: tag.label[lang],
+  }));
+
+  const half = Math.ceil(items.length / 2);
+  const rowOne = items.slice(0, half);
+  const rowTwo = items.slice(half);
 
   return (
     <IndustriesUI
-      badge={t.industries.badge}
-      title={t.industries.title}
-      rowOne={t.industries.rowOne}
-      rowTwo={t.industries.rowTwo}
+      badge={data.badge[lang]}
+      title={data.title[lang]}
+      rowOne={rowOne}
+      rowTwo={rowTwo}
     />
   );
 }

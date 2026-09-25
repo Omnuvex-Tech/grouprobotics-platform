@@ -20,8 +20,7 @@ export interface FooterProps {
   poweredByHref?: string;
   navLinks: FooterLinkItem[];
   copyright: string;
-  privacyLabel: string;
-  privacyHref: string;
+  logoSrc?: string | null;
 }
 
 const itemVariants: Variants = {
@@ -43,8 +42,7 @@ export function FooterUI({
   poweredByHref = 'https://omnuvex.net',
   navLinks,
   copyright,
-  privacyLabel,
-  privacyHref,
+  logoSrc,
 }: FooterProps) {
   return (
     <footer className={styles.footer} style={{ overflow: 'hidden' }}>
@@ -58,8 +56,8 @@ export function FooterUI({
             transition={{ delay: 0.05 }}
           >
             <Link href="/" className={styles.brand}>
-              <Image
-                src="/images/Logo.svg"
+            <Image
+                src={logoSrc || '/images/Logo.svg'}
                 alt={brandName}
                 width={36}
                 height={36}

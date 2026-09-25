@@ -1,15 +1,25 @@
-import { Market as MarketUI } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { Market as MarketUI, type MarketItem } from '@repo/ui';
+import { getMarket } from '@/lib/api';
 
-export function Market({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+export async function Market({ locale }: { locale: string }) {
+  const data = await getMarket();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
+
+  const items: MarketItem[] = data.pills.map((pill, index) => ({
+    number: String(index + 1).padStart(2, '0'),
+    label: pill.label[lang],
+  }));
+
+  const half = Math.ceil(items.length / 2);
+  const rowOne = items.slice(0, half);
+  const rowTwo = items.slice(half);
 
   return (
     <MarketUI
-      badge={t.market.badge}
-      title={t.market.title}
-      rowOne={t.market.rowOne}
-      rowTwo={t.market.rowTwo}
+      badge={data.badge[lang]}
+      title={data.title[lang]}
+      rowOne={rowOne}
+      rowTwo={rowTwo}
     />
   );
 }

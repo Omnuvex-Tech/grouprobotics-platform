@@ -6,13 +6,11 @@ import styles from '../../styles/ProblemSolution/problemSolution.module.css';
 
 export interface ProblemSolutionProps {
   badge: string;
-  titleLineOne: string;
-  titleLineTwo: string;
+  title: string;
   description: string;
   image: string;
   imageAlt: string;
 }
-
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 25 },
   visible: {
@@ -43,8 +41,7 @@ const wordVariants: Variants = {
 
 export function ProblemSolutionUI({
   badge,
-  titleLineOne,
-  titleLineTwo,
+  title,
   description,
   image,
   imageAlt,
@@ -62,7 +59,7 @@ export function ProblemSolutionUI({
           {badge}
         </motion.span>
 
-        <motion.h2
+       <motion.h2
           className={styles.title}
           initial="hidden"
           whileInView="visible"
@@ -70,9 +67,7 @@ export function ProblemSolutionUI({
           variants={fadeInUp}
           transition={{ delay: 0.08 }}
         >
-          {titleLineOne}
-          <br />
-          {titleLineTwo}
+          {title}
         </motion.h2>
 
         <motion.p

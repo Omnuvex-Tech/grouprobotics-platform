@@ -1,21 +1,36 @@
-'use client';
-
 import { Contact as ContactUI } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { getContact } from '@/lib/api';
 
-export function Contact({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
+export async function Contact({ locale }: { locale: string }) {
+  const data = await getContact();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
+
+  const interestOptions = data.options.map((opt) => ({
+    value: String(opt.id),
+    label: opt.label[lang],
+  }));
 
   return (
     <ContactUI
-      badge={t.contact.badge}
-      title={t.contact.title}
-      description={t.contact.description}
-      labels={t.contact.labels}
-      interestOptions={t.contact.interestOptions}
-      onSubmit={(data) => {
-        console.log('Contact form submitted:', data, locale);
+      badge={data.badge[lang]}
+      title={data.title[lang]}
+      description={data.description[lang]}
+      labels={{
+        name: data.nameLabel[lang],
+        namePlaceholder: data.namePlaceholder[lang],
+        phone: data.phoneLabel[lang],
+        phonePlaceholder: data.phonePlaceholder[lang],
+        company: data.companyLabel[lang],
+        companyPlaceholder: data.companyPlaceholder[lang],
+        email: data.emailLabel[lang],
+        emailPlaceholder: data.emailPlaceholder[lang],
+        interest: data.interestLabel[lang],
+        interestPlaceholder: data.interestPlaceholder[lang],
+        message: data.messageLabel[lang],
+        messagePlaceholder: data.messagePlaceholder[lang],
+        send: data.sendLabel[lang],
       }}
+      interestOptions={interestOptions}
     />
   );
 }

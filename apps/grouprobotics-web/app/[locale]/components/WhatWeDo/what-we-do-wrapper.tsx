@@ -1,26 +1,16 @@
 import { WhatWeDo as WhatWeDoUI, type WhatWeDoItem } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { getWhatWeDo } from '@/lib/api';
 
-const NUMBERS = ['01', '02', '03', '04', '05', '06'];
-const IMAGES = [
-  '/images/wwd1.jpg',
-  '/images/wwd2.jpg',
-  '/images/wwd3.jpg',
-  '/images/wwd4.jpg',
-  '/images/wwd5.jpg',
-  '/images/wwd6.jpg',
-];
+export async function WhatWeDo({ locale }: { locale: string }) {
+  const data = await getWhatWeDo();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
 
-export function WhatWeDo({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
-
-  const items: WhatWeDoItem[] = t.whatWeDo.items.map((item, index) => ({
-    number: NUMBERS[index] ?? String(index + 1).padStart(2, '0'),
-    image: IMAGES[index] ?? IMAGES[0]!,
-    label: item.label,
-    title: item.title,
-    description: item.description,
+  const items: WhatWeDoItem[] = data.items.map((item, index) => ({
+    number: String(index + 1).padStart(2, '0'),
+    image: item.image || '/images/wwd1.jpg',
+    label: item.label[lang],
+    title: item.label[lang],
+    description: item.description[lang],
   }));
-
-  return <WhatWeDoUI badge={t.whatWeDo.badge} title={t.whatWeDo.title} items={items} />;
+  return <WhatWeDoUI badge={data.badge[lang]} title={data.title[lang]} items={items} />;
 }

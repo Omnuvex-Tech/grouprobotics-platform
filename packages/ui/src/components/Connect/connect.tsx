@@ -9,6 +9,9 @@ export interface ConnectProps {
   title: string;
   description: string;
   cta: ReactNode;
+  bgColor?: string;
+  imageLeft?: string | null;
+  imageRight?: string | null;
 }
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
@@ -34,7 +37,7 @@ const blobKeyframes = {
   ],
 };
 
-export function ConnectUI({ title, description, cta }: ConnectProps) {
+export function ConnectUI({ title, description, cta, bgColor, imageLeft, imageRight }: ConnectProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
@@ -43,6 +46,7 @@ export function ConnectUI({ title, description, cta }: ConnectProps) {
       <motion.div
         className={styles.blob}
         aria-hidden="true"
+        style={bgColor ? { background: bgColor } : undefined}
         animate={blobKeyframes}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -53,8 +57,8 @@ export function ConnectUI({ title, description, cta }: ConnectProps) {
         animate={isInView ? 'visible' : 'hiddenLeft'}
         transition={{ duration: 2.4, ease: easeOut }}
       >
-        <Image
-          src="/images/handleft.svg"
+   <Image
+          src={imageLeft || '/images/handleft.svg'}
           alt=""
           width={380}
           height={380}
@@ -76,8 +80,8 @@ export function ConnectUI({ title, description, cta }: ConnectProps) {
         animate={isInView ? 'visible' : 'hiddenRight'}
         transition={{ duration: 2.4, ease: easeOut, delay: 0.15 }}
       >
-        <Image
-          src="/images/handright.svg"
+ <Image
+          src={imageRight || '/images/handright.svg'}
           alt=""
           width={380}
           height={380}

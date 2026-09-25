@@ -1,0 +1,237 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Connect {
+  id          Int      @id @default(1)
+  title       Json     @default("{}")
+  description Json     @default("{}")
+  cta         Json     @default("{}")
+  bgColor     String   @default("#b0d6ff")
+  imageLeft   String?
+  imageRight  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("connect")
+}
+
+model Approach {
+  id          Int      @id @default(1)
+  badge       Json     @default("{}")
+  title       Json     @default("{}")
+  paragraph   Json     @default("{}")
+  highlight   Json     @default("{}")
+  quote       Json     @default("{}")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("approach")
+}
+
+model ProblemSolution {
+  id              Int      @id @default(1)
+  badge           Json     @default("{}")
+  headline        Json     @default("{}")
+  description     Json     @default("{}")
+  backgroundImage String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("problem_solution")
+}
+
+
+model MarketSettings {
+  id        Int      @id @default(1)
+  badge     Json     @default("{}")
+  title     Json     @default("{}")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("market_settings")
+}
+
+model MarketPill {
+  id        Int      @id @default(autoincrement())
+  label     Json     @default("{}")
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("market_pills")
+}
+
+
+model IndustriesSettings {
+  id        Int      @id @default(1)
+  badge     Json     @default("{}")
+  title     Json     @default("{}")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("industries_settings")
+}
+
+model IndustryTag {
+  id        Int      @id @default(autoincrement())
+  icon      String   @default("🏭")
+  label     Json     @default("{}")
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("industry_tags")
+}
+
+
+model WhatWeDoSettings {
+  id        Int      @id @default(1)
+  badge     Json     @default("{}")
+  title     Json     @default("{}")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("what_we_do_settings")
+}
+
+model WhatWeDoItem {
+  id          Int      @id @default(autoincrement())
+  label       Json     @default("{}")
+  description Json     @default("{}")
+  image       String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("what_we_do_items")
+}
+
+model CapabilitiesSettings {
+  id        Int      @id @default(1)
+  badge     Json     @default("{}")
+  title     Json     @default("{}")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("capabilities_settings")
+}
+
+model CapabilityCard {
+  id          Int      @id @default(autoincrement())
+  title       Json     @default("{}")
+  description Json     @default("{}")
+  image       String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("capability_cards")
+}
+
+model PartnersSettings {
+  id        Int      @id @default(1)
+  badge     Json     @default("{}")
+  title     Json     @default("{}")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("partners_settings")
+}
+
+model PartnerCard {
+  id          Int      @id @default(autoincrement())
+  icon        String   @default("Building2")
+  title       Json     @default("{}")
+  description Json     @default("{}")
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("partner_cards")
+}
+
+model NavbarSettings {
+  id        Int      @id @default(1)
+  logo      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("navbar_settings")
+}
+
+model NavLink {
+  id        Int      @id @default(autoincrement())
+  label     Json     @default("{}")
+  href      String   @default("#")
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("nav_links")
+}
+
+model FooterSettings {
+  id            Int      @id @default(1)
+  logo          String?
+  companyName   Json     @default("{}")
+  location      Json     @default("{}")
+  websiteUrl    String   @default("")
+  phone         String   @default("")
+  copyrightLine Json     @default("{}")
+  tagline       Json     @default("{}")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("footer_settings")
+}
+
+
+model ContactSettings {
+  id                   Int      @id @default(1)
+  badge                Json     @default("{}")
+  title                Json     @default("{}")
+  description          Json     @default("{}")
+  nameLabel            Json     @default("{}")
+  namePlaceholder      Json     @default("{}")
+  phoneLabel           Json     @default("{}")
+  phonePlaceholder     Json     @default("{}")
+  companyLabel         Json     @default("{}")
+  companyPlaceholder   Json     @default("{}")
+  emailLabel           Json     @default("{}")
+  emailPlaceholder     Json     @default("{}")
+  interestLabel        Json     @default("{}")
+  interestPlaceholder  Json     @default("{}")
+  messageLabel         Json     @default("{}")
+  messagePlaceholder   Json     @default("{}")
+  sendLabel            Json     @default("{}")
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@map("contact_settings")
+}
+
+model ContactInterestOption {
+  id        Int      @id @default(autoincrement())
+  label     Json     @default("{}")
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_interest_options")
+}

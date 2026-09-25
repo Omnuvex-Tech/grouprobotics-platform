@@ -1,27 +1,24 @@
 import { Reseller as ResellerUI, type ResellerItem } from '@repo/ui';
-import { getDictionary } from '@/lib/i18n';
+import { getPartners } from '@/lib/api';
+import { ICON_CATALOG } from '@/lib/icon-catalog';
+import { Building2 } from 'lucide-react';
+export async function Reseller({ locale }: { locale: string }) {
+  const data = await getPartners();
+  const lang = (locale in data.title ? locale : 'az') as keyof typeof data.title;
 
-const ICONS = [
-  '/images/reseller1.svg',
-  '/images/reseller2.svg',
-  '/images/reseller3.svg',
-  '/images/reseller4.svg',
-];
-
-export function Reseller({ locale }: { locale: string }) {
-  const t = getDictionary(locale);
-
-  const items: ResellerItem[] = t.reseller.items.map((item, index) => ({
-    icon: ICONS[index] ?? ICONS[0]!,
-    title: item.title,
-    description: item.description,
-  }));
+  const items: ResellerItem[] = data.cards.map((card) => {
+    const IconComponent = ICON_CATALOG[card.icon] ?? Building2;
+    return {
+      icon: <IconComponent size={24} />,
+      title: card.title[lang],
+      description: card.description[lang],
+    };
+  });
 
   return (
     <ResellerUI
-      badge={t.reseller.badge}
-      titleLineOne={t.reseller.titleLineOne}
-      titleLineTwo={t.reseller.titleLineTwo}
+      badge={data.badge[lang]}
+      title={data.title[lang]}
       items={items}
     />
   );

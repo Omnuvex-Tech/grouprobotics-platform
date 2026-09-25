@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { isValidLocale } from '@/lib/i18n';
+import { getConnect } from '@/lib/api';
 import { Connect } from './components/Connect/connect-wrapper';
 import { Approach } from './components/Approach/approach-wrapper';
 import { WhatWeDo } from './components/WhatWeDo/what-we-do-wrapper';
@@ -21,9 +22,11 @@ export default async function Home({
     notFound();
   }
 
+  const connectData = await getConnect();
+
   return (
     <>
-      <Connect          locale={locale} />
+      <Connect          data={connectData} locale={locale} />
       <Approach         locale={locale} />
       <WhatWeDo         locale={locale} />
       <Capabilities     locale={locale} />

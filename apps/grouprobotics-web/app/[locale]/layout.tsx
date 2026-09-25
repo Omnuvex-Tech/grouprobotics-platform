@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Navbar } from './components/Navbar/navbar-wrapper';
+import { getConnect, getNavbar } from '@/lib/api';
 import { Footer } from './components/Footer/footer-wrapper';
 import { HeroCtaProvider } from './hero-cta-context';
 import { isValidLocale, LOCALES } from '@/lib/i18n';
@@ -33,9 +34,13 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const [connectData, navbarData] = await Promise.all([getConnect(), getNavbar()]);
+  const lang = (locale in connectData.cta ? locale : 'az') as keyof typeof connectData.cta;
+  const ctaLabel = connectData.cta[lang];
+
   return (
     <HeroCtaProvider>
-      <Navbar locale={locale} />
+      <Navbar locale={locale} ctaLabel={ctaLabel} navbarData={navbarData} />
       <main>{children}</main>
       <Footer locale={locale} />
     </HeroCtaProvider>

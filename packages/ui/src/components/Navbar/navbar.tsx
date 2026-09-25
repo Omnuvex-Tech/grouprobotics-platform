@@ -18,6 +18,7 @@ interface NavbarUIProps {
   mobileLanguageSwitcher: ReactNode;
   cta?: ReactNode;
    mobileCta?: ReactNode;
+  logoSrc?: string | null;
 }
 
 export function NavbarUI({
@@ -25,7 +26,8 @@ export function NavbarUI({
   languageSwitcher,
   mobileLanguageSwitcher,
   cta,
-  mobileCta
+  mobileCta,
+  logoSrc
 }: NavbarUIProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -45,9 +47,9 @@ export function NavbarUI({
   return (
     <header className={styles.navbar}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} onClick={closeMenu}>
+       <Link href="/" className={styles.logo} onClick={closeMenu}>
           <Image
-            src="/images/Logo.svg"
+            src={logoSrc || '/images/Logo.svg'}
             alt="Logo"
             width={100}
             height={32}
@@ -98,10 +100,9 @@ export function NavbarUI({
 
     <div className={`${styles.mobileOverlay} ${isMenuOpen ? styles.mobileOverlayOpen : ''}`}>
   <div className={styles.mobileHeaderBar}>
-    <Link href="/" className={styles.logo} onClick={closeMenu}>
-      <Image src="/images/Logo.svg" alt="Logo" width={100} height={32} className={styles.logoImage} />
+     <Link href="/" className={styles.logo} onClick={closeMenu}>
+      <Image src={logoSrc || '/images/Logo.svg'} alt="Logo" width={100} height={32} className={styles.logoImage} />
     </Link>
-
     <button
       type="button"
       className={styles.closeBtn}
